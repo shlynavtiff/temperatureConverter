@@ -18,10 +18,13 @@ public class TemperatureConverter {
                 System.out.println("Select a Conversion to perform: ");
                 System.out.println("[A] Celsius to Fahrenheit");
                 System.out.println("[B] Celsius to Kelvin");
-                System.out.println("[C] Fahrenheit to Celsius");
-                System.out.println("[D] Fahrenheit to Kelvin");
-                System.out.println("[E] Kelvin to Celsius");
-                System.out.println("[F] Kelvin to Fahrenheit");
+                System.out.println("[C] Celsius to Rankine");
+                System.out.println("[D] Fahrenheit to Celsius");
+                System.out.println("[E] Fahrenheit to Kelvin");
+                System.out.println("[F] Fahrenheit to Rankine");
+                System.out.println("[G] Kelvin to Celsius");
+                System.out.println("[H] Kelvin to Fahrenheit");
+                System.out.println("[I] Kelvin to Rankine");
                 System.out.println("[X] To terminate the program");
                 while (true) {
                     System.out.print("Enter conversion (A - F): ");
@@ -82,6 +85,25 @@ public class TemperatureConverter {
                     
                 case "C":
                     currentChoice = "C";
+                    while (true) {
+                    	System.out.println();
+                    	System.out.println("---Celsius to Rankine---");
+                    	System.out.print("Enter value to convert: ");
+                    	if (x.hasNextDouble()) {
+                    		temp = x.nextDouble();
+                    		break;
+                    	} else {
+                    		System.out.println("Invalid Input. Please enter a valid value to convert.");
+                            x.next();
+                    	}
+                    }        
+                    double resultC = (temp + 273.15) * 9/5;
+                    System.out.println();
+                    System.out.printf("%.2f°C = %.2fR\n", temp, resultC);
+                    break;
+                    
+                case "D":
+                    currentChoice = "D";
                     System.out.println();
                 	System.out.println("---Fahrenheit to Celcius---");
                     System.out.print("Enter value to convert: ");
@@ -94,13 +116,13 @@ public class TemperatureConverter {
                             x.next();
                     	}
                     }
-                    double resultC = (temp - 32) * 5 / 9;
+                    double resultD = (temp - 32) * 5 / 9;
                     System.out.println();
-                    System.out.printf("%.2f°F = %.2f°C\n", temp, resultC);
+                    System.out.printf("%.2f°F = %.2f°C\n", temp, resultD);
                     break;
                     
-                case "D":
-                    currentChoice = "D";
+                case "E":
+                    currentChoice = "E";
                     System.out.print("Enter value to convert: ");
                     System.out.println();
                 	System.out.println("---Fahrenheit to Kelvin---");
@@ -114,12 +136,32 @@ public class TemperatureConverter {
                     	}
                     }
                    
-                    double resultD = ((temp - 32) * 5 / 9) + 273.15;
+                    double resultE = ((temp - 32) * 5 / 9) + 273.15;
                     System.out.println();
-                    System.out.printf("%.2f°F = %.2fK\n", temp, resultD);
+                    System.out.printf("%.2f°F = %.2fK\n", temp, resultE);
                     break;
                     
-                case "E":
+                case "F":
+                    currentChoice = "F";
+                    System.out.print("Enter value to convert: ");
+                    System.out.println();
+                	System.out.println("---Fahrenheit to Rankine---");
+                    while (true) {
+                    	if (x.hasNextDouble()) {
+                    		 temp = x.nextDouble();
+                    		 break;
+                    	} else {
+                    		System.out.println("Invalid Input. Please enter a valid value to convert.");
+                    		 x.next();
+                    	}
+                    }
+                   
+                    double resultF = temp + 459.67;
+                    System.out.println();
+                    System.out.printf("%.2f°F = %.2fR\n", temp, resultF);
+                    break;
+                    
+                case "G":
                     currentChoice = "E";
                     System.out.print("Enter value to convert: ");
                     System.out.println();
@@ -133,13 +175,13 @@ public class TemperatureConverter {
                     	}
                     }
                     
-                    double resultE = temp - 273.15;
+                    double resultG = temp - 273.15;
                     System.out.println();
-                    System.out.printf("%.2fK = %.2f°C\n", temp, resultE);
+                    System.out.printf("%.2fK = %.2f°C\n", temp, resultG);
                     break;
                     
-                case "F":
-                    currentChoice = "F";
+                case "H":
+                    currentChoice = "H";
                     System.out.print("Enter value to convert: ");
                     System.out.println();
                 	System.out.println("---Kelvin to Fahrenheit---");
@@ -151,10 +193,30 @@ public class TemperatureConverter {
                     		System.out.println("Invalid Input. Please enter a valid value to convert.");
                     	}
                     }
-                    double resultF = (temp - 273.15) * 9 / 5 + 32;
+                    double resultH = (temp - 273.15) * 9 / 5 + 32;
                     System.out.println();
-                    System.out.printf("%.2fK = %.2f°F\n", temp, resultF);
+                    System.out.printf("%.2fK = %.2f°F\n", temp, resultH);
                     break;
+                    
+                case "I":
+                    currentChoice = "I";
+                    System.out.print("Enter value to convert: ");
+                    System.out.println();
+                	System.out.println("---Kelvin to Rankine---");
+                    while (true) {
+                    	if (x.hasNextDouble()) {
+                    		temp = x.nextDouble();
+                    		break;
+                    	} else {
+                    		System.out.println("Invalid Input. Please enter a valid value to convert.");
+                    	}
+                    }
+                    double resultI = temp * 9/5;
+                    System.out.println();
+                    System.out.printf("%.2fK = %.2f°R\n", temp, resultI);
+                    break;
+                    
+                    
                     
                 case "X":
                     System.out.println("The program will now close.");
