@@ -27,13 +27,14 @@ public class TemperatureConverter {
                 System.out.println("[I] Kelvin to Rankine");
                 System.out.println("[X] To terminate the program");
                 while (true) {
-                    System.out.print("Enter conversion (A - F): ");
+                    System.out.print("Enter conversion (A - I): ");
                     choice = x.next();
 
                     if (!choice.equalsIgnoreCase("A") && !choice.equalsIgnoreCase("B") &&
                         !choice.equalsIgnoreCase("C") && !choice.equalsIgnoreCase("D") &&
                         !choice.equalsIgnoreCase("E") && !choice.equalsIgnoreCase("F") &&
-                        !choice.equalsIgnoreCase("X")) {
+                        !choice.equalsIgnoreCase("G") && !choice.equalsIgnoreCase("H") &&
+                        !choice.equalsIgnoreCase("I") && !choice.equalsIgnoreCase("X")) {
                         System.out.println("Invalid Choice. Please enter a valid value.");
                     } else {
                         break;
